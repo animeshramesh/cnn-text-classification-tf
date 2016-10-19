@@ -4,7 +4,7 @@ It is slightly simplified implementation of Kim's [Convolutional Neural Networks
 
 ## ToDo
 - Find a good training data set. (specific to news articles)
-- Make a list of tech companies. (manually)
+- ~~Make a list of tech companies. (manually)~~
 - Find 'trending' companies automatically and rank them. (Probably a web scraper which searches for news articles)
 - Integrate word2vec embeddings
 - Integrate two channels for CNN (static and non-static)
@@ -17,8 +17,13 @@ It is slightly simplified implementation of Kim's [Convolutional Neural Networks
 - Python 3
 - Tensorflow > 0.8
 - Numpy
+- Pandas
 
 ## Training
+
+- Download the pre-trained word2vec vectors from [here](https://docs.google.com/uc?id=0B7XkCwpI5KDYNlNUTTlSS21pQmM&export=download). (It's about 3.5GB!)
+- Run the process_data.py file by giving the path to the word2vec binary file. This creates a pickle file with the vectors.
+- Run train.py. This would the vectors from the pickle file created above.
 
 Print parameters:
 

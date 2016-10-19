@@ -8,12 +8,13 @@ import datetime
 import data_helpers
 from text_cnn import TextCNN
 from tensorflow.contrib import learn
+import cPickle
 
 # Parameters
 # ==================================================
 
 # Model Hyperparameters
-tf.flags.DEFINE_integer("embedding_dim", 128, "Dimensionality of character embedding (default: 128)")
+tf.flags.DEFINE_integer("embedding_dim", 300, "Dimensionality of character embedding (default: 300)")
 tf.flags.DEFINE_string("filter_sizes", "3,4,5", "Comma-separated filter sizes (default: '3,4,5')")
 tf.flags.DEFINE_integer("num_filters", 128, "Number of filters per filter size (default: 128)")
 tf.flags.DEFINE_float("dropout_keep_prob", 0.5, "Dropout keep probability (default: 0.5)")
@@ -42,6 +43,11 @@ print("")
 # Load data
 print("Loading data...")
 x_text, y = data_helpers.load_data_and_labels()
+data = cPickle.load(open("mr.p","rb"))
+revs, w2v_W, word_idx_map, vocab = data[0], data[1], data[2], data[3]
+print "Data loaded!"
+
+
 
 # Build vocabulary
 max_document_length = max([len(x.split(" ")) for x in x_text])
@@ -78,7 +84,9 @@ with tf.Graph().as_default():
             embedding_size=FLAGS.embedding_dim,
             filter_sizes=list(map(int, FLAGS.filter_sizes.split(","))),
             num_filters=FLAGS.num_filters,
-            l2_reg_lambda=FLAGS.l2_reg_lambda)
+            word2vec_weight=w2v_W,
+            l2_reg_lambda=FLAGS.l2_reg_lambda
+            )
 
         # Define Training procedure
         global_step = tf.Variable(0, name="global_step", trainable=False)
