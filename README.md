@@ -1,6 +1,4 @@
-**[This code is a modification of the "Implementing a CNN for Text Classification in Tensorflow" blog post.](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/)**
-
-It is slightly simplified implementation of Kim's [Convolutional Neural Networks for Sentence Classification](http://arxiv.org/abs/1408.5882) paper in Tensorflow.
+This is an implementation of Kim's [Convolutional Neural Networks for Sentence Classification](http://arxiv.org/abs/1408.5882) paper in Tensorflow. 
 
 ## ToDo
 - Find a good training data set. (Look into Stanford Sentiment TreeBank-1)
@@ -22,8 +20,8 @@ It is slightly simplified implementation of Kim's [Convolutional Neural Networks
 ## Training
 
 - Download the pre-trained word2vec vectors from [here](https://docs.google.com/uc?id=0B7XkCwpI5KDYNlNUTTlSS21pQmM&export=download). (It's about 3.5GB!)
-- Run the process_data.py file by giving the path to the word2vec binary file. This creates a pickle file with the vectors.
-- Run train.py. This would the vectors from the pickle file created above.
+- Run the `process_data.py` file by giving the path to the word2vec binary file. This creates a pickle file with the vectors.
+- Run `train.py`. This employs the vectors from the pickle file created above.
 
 Print parameters:
 
