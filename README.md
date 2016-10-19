@@ -3,10 +3,10 @@
 It is slightly simplified implementation of Kim's [Convolutional Neural Networks for Sentence Classification](http://arxiv.org/abs/1408.5882) paper in Tensorflow.
 
 ## ToDo
-- Find a good training data set. (specific to news articles)
-- ~~Make a list of tech companies. (manually)~~
+- Find a good training data set. (Look into Stanford Sentiment TreeBank-1)
+- ~~Make a list of tech companies.~~
 - Find 'trending' companies automatically and rank them. (Probably a web scraper which searches for news articles)
-- Integrate word2vec embeddings
+- ~~Integrate word2vec embeddings~~
 - Integrate two channels for CNN (static and non-static)
 - Use 10-fold cross validation to validate data.
 - GPU Support
