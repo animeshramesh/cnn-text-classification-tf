@@ -1,6 +1,7 @@
 *.npy
 runs/
 mr.p
+.DS_Store
 
 # Created by https://www.gitignore.io/api/python,ipythonnotebook
 
