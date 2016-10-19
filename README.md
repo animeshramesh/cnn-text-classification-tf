@@ -5,7 +5,7 @@ It is slightly simplified implementation of Kim's [Convolutional Neural Networks
 ## ToDo
 - Find a good training data set. (specific to news articles)
 - Make a list of tech companies. (manually)
-- Find 'trending' companies automatically. (Probably a web scraper which searches for news articles)
+- Find 'trending' companies automatically and rank them. (Probably a web scraper which searches for news articles)
 - Integrate word2vec embeddings
 - Use 10-fold cross validation to validate data.
 - GPU Support
